@@ -1,0 +1,200 @@
+
+
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./include/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./include/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>TopEPay</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="C:/Users/Admin/Desktop/Site/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="C:/Users/Admin/Desktop/Site/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="C:/Users/Admin/Desktop/Site/favicon-16x16.png">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+    <div id='loader'> </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html">
+        <img src="C:/Users/Admin/Desktop/Site/favicon-32x32.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        TopEPay
+      </a>
+      <a class="nav-link" href="index.html""></a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html"">Обмен</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="kontacts.html" target="_blank">Контакты</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="rules_politics.html" target="_blank">Правила обмена</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="rules_politics.html" target="_blank">Политика конфиденциальности</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <br><br>
+    <div class='main-box'>
+    <center><h1 style="font: 600 30px/30px 'Nunito',sans-serif;">Обмен валют</h1></center>
+    <input type="text" id='select-valuta' value='ru' hidden />
+    <br><br>
+    <center>
+      <div style="width: 75%" id="box" class="container">
+      <br><br>
+      <form action='/check/'>
+      <div class="row">
+        <div class="col-sm">
+          <center><h1 style="font: 600 30px/30px 'Nunito',sans-serif;">Отдаёте</h1></center>
+          <div class="form-group">
+            <select name="bank" class="form-control" id="exampleFormControlSelect1">
+                      <option value="Сбербанк" selected>Сбербанк</option>
+                      <option value="Тинькофф Банк">Тинькофф Банк</option>
+                      <option value="Альфа Банк">Альфа Банк</option>
+                      <option value="Газпромбанк">Газпромбанк</option>
+                      <option value="РосБанк">РосБанк</option>
+                      <option value="Qiwi">Qiwi</option>
+            </select>
+          <input id='bank_code' name='bank_code' type='text' value='ru' hidden/>
+          </div>
+          <div class="form-group">
+             <input type="text" name="value_give" class="form-control" id="num" placeholder="0" oninput="MC(this.value)" onchange="MC(this.value)">
+          <p id='label'></p>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="fio" id="exampleFormControlInput1" placeholder="ФИО">
+          </div>
+        </div>
+        <div class="col-sm">
+          <center><h1 style="font: 600 30px/30px 'Nunito',sans-serif;">Получаете</h1></center>
+          <div class="form-group">
+            <select name="crypt" class="form-control" id="exampleFormControlSelect2">
+              <option value="Tether TRC20 (USDT)" selected>Tether TRC20 (USDT)</option>
+              <option value="Tether ERC20 (USDT)">Tether ERC20 (USDT)</option>
+              <option value="Tether BEP20 (USDT)">Tether BEP20 (USDT)</option>
+              <option value="BUSD ERC20">BUSD ERC20</option>
+              <option value="BUSD BEP20">BUSD BEP20</option>
+              <option value="BTC Bitcoin">BTC Bitcoin</option>
+            </select>
+          </div>
+            <span type="text" id="num2" placeholder="0"></span>
+          <div class="form-group">
+            <input type="text" name="wallet_address" class="form-control" id="exampleFormControlInput1" placeholder="Адрес кошелька">
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <div class="form-group">
+        <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="tg" id="exampleFormControlInput1" placeholder="Номер телефона">
+      </div>
+      <input type="text" name="login" value="User" hidden /> 
+      <a
+              href="C:/Users/Admin/Desktop/Site/request.html"
+              target="_blank"
+              class="btn btn-primary"
+            >
+              Обменять
+            </a>
+      <br><br>
+      </form>
+    </div></center>
+  </div>
+  <script>
+
+  </script>
+  <br>
+  <div class="home_reserv_wrap">
+    <div class="home_reserv_ins">
+        <div class="home_reserv_abs"></div>
+        <div class="home_reserv_block">
+          <div class="home_reserv_block_ins">
+              <center><div class="home_reserv_title"><h2>Резерв валюты</h2></div></center>
+          </div>
+        </div>
+    </div>
+  </div>
+  <br><br><br>
+<div class="row row-cols-25 row-cols-md-6 row-cols-lg-6 g-5">
+  <img
+              class="rounded-img"
+              src="C:/Users/Admin/Desktop/Site/usdt.png"
+              alt="USDT"
+              width="70"
+              height="140"
+            />
+  <h3>248934.5</h3>
+  <br>
+  <img
+              class="rounded-img"
+              src="C:/Users/Admin/Desktop/Site/eth.png"
+              alt="BTC"
+              width="70"
+              height="140"
+            />
+  <h3>867.2</h3>
+  <br>
+  <img
+              class="rounded-img"
+              src="C:/Users/Admin/Desktop/Site/btc.png"
+              alt="BTC"
+              width="70"
+              height="140"
+            />
+  <h3>3.85</h3>
+  </div>
+  <br>
+  <center><h3 style="font: 600 30px/30px 'Nunito',sans-serif;">Топ 3 пользователя</h1></center>
+  <br>
+  <center><div class="container">
+    <div class="row">
+      <div class="col align-self-center">
+        <a><img class='image-avatar top1' width='250px' height='250px' src="C:/Users/Admin/Desktop/Site/1.jpg" /></a>
+        <h6 style="font: 600 20px/20px 'Nunito',sans-serif;">Давид Леви</h6>
+      </div>
+      <div class="col align-self-center">
+        <a><img class='image-avatar top2' width='250px' height='250px' src="C:/Users/Admin/Desktop/Site/2.jpg" /></a>
+        <h6 style="font: 600 20px/20px 'Nunito',sans-serif;">Соня Мелявская</h6>
+      </div>
+      <div class="col align-self-center">
+        <a><img class='image-avatar top3' width='250px' height='250px' src="C:/Users/Admin/Desktop/Site/3.jpg" /></a>
+        <h6 style="font: 600 20px/20px 'Nunito',sans-serif;">Кирилл Леонов</h6>
+      </div>
+    </div>
+  </div></center>
+  <br>
+  <hr>
+  <br>
+  <center><section class="sc-FNXRL fEGqb">  
+  </section></center>
+    <div class="container">
+      <div class="col">
+          <h2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Навигация</h2>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="C:/Users/Admin/Desktop/Site/index.html" class="nav-link p-0 text-muted"><h3>Обмен<h3></a></li>
+            <li class="nav-item mb-2"><a href="C:/Users/Admin/Desktop/Site/kontacts.html" class="nav-link p-0 text-muted" target="_blank"><h3>Контакты<h3></a></li>
+            <li class="nav-item mb-2"><a class="nav-link p-0 text-muted" href='https://t.me/TopEppay'><h3>Поддержка<h3></a></li>
+          </ul>
+        </div>
+    </div>
+  <script>
+      setTimeout(() => {
+          let preloader = document.getElementById('loader');
+          preloader.removeAttribute('id');
+      }, 3000);
+      setTimeout(() => {
+          $('.pulse-button').fadeIn(3000);
+      }, 5000)
+  </script>
+  </body>
+  </html>
